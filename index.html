@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Schedule Maker
+    </title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <style>
+    .myDiv {
+        text-align: center;
+        font-family: 'Manrope', sans-serif;
+      }
+      </style>
+</head>
+
+<body>
+    <div class="myDiv">
+    <h1>
+        Welcome to Schedule Maker!
+    </h1>
+
+    <h2 class="test">
+        Please select from the following options: 
+    </h2>
+
+
+<form action="">
+    <input type="checkbox" id="preference1" name="preference1" value="Active">
+    <label for="preference1"> I want to create an active schedule</label><br>
+    <input type="checkbox" id="preference2" name="preference2" value="Dietary">
+    <label for="preference2"> I want to create a dietary monitored schedule</label><br>
+    <input type="checkbox" id="preference3" name="preference3" value="Work">
+    <label for="preference3"> I want to create a work related schedule </label><br><br>
+  </form>
+<!-- <script src = "schedule.js"> -->
+       <h2>Morning task(s)</h2>
+
+
+    <p> Please select a task:</p>
+
+<form action="/action_page.php">
+  <label for="tasks">Choose a task:</label>
+  <select id="tasks" name="tasks">
+    <option value="eat">eat</option>
+    <option value="exercise">exercise</option>
+    <option value="errand">errand</option>
+    <option value="work">work</option>
+    <option value="event">event</option>
+    <option value="other">other</option>
+  </select>
+</form>
+
+<h2> Afternoon task(s)</h2>
+
+<p> Please select a task:</p>
+
+<form action="/action_page.php">
+  <label for="tasks">Choose a task:</label>
+  <select id="tasks" name="tasks">
+    <option value="eat">eat</option>
+    <option value="exercise">exercise</option>
+    <option value="errand">errand</option>
+    <option value="work">work</option>
+    <option value="event">event</option>
+    <option value="other">other</option>
+  </select>
+</form>
+
+
+<h2>Evening task(s)</h2>
+
+<p> Please select a task:</p>
+
+<form action="/action_page.php">
+  <label for="tasks">Choose a task:</label>
+  <select id="tasks1" name="tasks">
+    <option value="eat">eat</option>
+    <option value="exercise">exercise</option>
+    <option value="errand">errand</option>
+    <option value="work">work</option>
+    <option value="event">event</option>
+    <option value="other">other</option>
+  </select>
+  </form>
+
+<h2>Night task(s)</h2>
+
+<p> Please select a task:</p>
+
+<form action="/action_page.php">
+  <label for="tasks">Choose a task:</label>
+  <select id="tasks2" name="tasks">
+    <option value="eat">eat</option>
+    <option value="exercise">exercise</option>
+    <option value="errand">errand</option>
+    <option value="work">work</option>
+    <option value="event">event</option>
+    <option value="other">other</option>
+  </select>
+</form>
+
+
+
+<script src="schedule.js"></script>
+
+<h1>Schedule privacy</h1>
+
+<form action="/action_page.php">
+  <p>Would you like you schedule to be private or public?</p>
+    <input type="radio" id="private" name="privacy" value="private">
+<label for="private">private</label><br>
+<input type="radio" id="public" name="privacy" value="public">
+<label for="public">public</label>
+
+  <br><br>
+
+  <input type="submit">
+</div>
+</body>
+</html>
