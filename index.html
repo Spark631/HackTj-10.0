@@ -14,15 +14,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
     <style>
-    .myDiv {
+    .myDiv1 {
         text-align: center;
         font-family: 'Manrope', sans-serif;
-      }
+            }
       </style>
 </head>
 
 <body>
-    <div class="myDiv">
+    <div class="myDiv1">
     <h1>
         Welcome to Schedule Maker!
     </h1>
@@ -31,57 +31,25 @@
         Please select from the following options: 
     </h2>
 
-
-<form action="">
-    <input type="checkbox" id="preference1" name="preference1" value="Active">
+<div>
+<form action="" ></form>
+    <input type="checkbox" id="preference1" name="preference1" value="Active" required>
     <label for="preference1"> I want to create an active schedule</label><br>
-    <input type="checkbox" id="preference2" name="preference2" value="Dietary">
-    <label for="preference2"> I want to create a dietary monitored schedule</label><br>
-    <input type="checkbox" id="preference3" name="preference3" value="Work">
+    <input type="checkbox" id="preference2" name="preference2" value="Dietary" required>
+    <label for="preference2"> I want to create a dietary focused schedule</label><br>
+    <input type="checkbox" id="preference3" name="preference3" value="Work" required>
     <label for="preference3"> I want to create a work related schedule </label><br><br>
   </form>
+ </div><div>
 <!-- <script src = "schedule.js"> -->
-       <h2>Morning task(s)</h2>
+       
 
+    <p> Please select a morning task:</p>
 
-    <p> Please select a task:</p>
-
-<form action="/action_page.php">
+<form action="/action_page.php" id ="action1">
   <label for="tasks">Choose a task:</label>
-  <select id="tasks" name="tasks">
-    <option value="eat">eat</option>
-    <option value="exercise">exercise</option>
-    <option value="errand">errand</option>
-    <option value="work">work</option>
-    <option value="event">event</option>
-    <option value="other">other</option>
-  </select>
-</form>
-
-<h2> Afternoon task(s)</h2>
-
-<p> Please select a task:</p>
-
-<form action="/action_page.php">
-  <label for="tasks">Choose a task:</label>
-  <select id="tasks" name="tasks">
-    <option value="eat">eat</option>
-    <option value="exercise">exercise</option>
-    <option value="errand">errand</option>
-    <option value="work">work</option>
-    <option value="event">event</option>
-    <option value="other">other</option>
-  </select>
-</form>
-
-
-<h2>Evening task(s)</h2>
-
-<p> Please select a task:</p>
-
-<form action="/action_page.php">
-  <label for="tasks">Choose a task:</label>
-  <select id="tasks1" name="tasks">
+  <select id="task1a" name="tasks" required>
+    <option value="none">none</option>
     <option value="eat">eat</option>
     <option value="exercise">exercise</option>
     <option value="errand">errand</option>
@@ -91,13 +59,39 @@
   </select>
   </form>
 
-<h2>Night task(s)</h2>
-
-<p> Please select a task:</p>
 
 <form action="/action_page.php">
   <label for="tasks">Choose a task:</label>
-  <select id="tasks2" name="tasks">
+  <select id="task1b" name="tasks">
+    <option value="none">none</option>
+    <option value="eat">eat</option>
+    <option value="exercise">exercise</option>
+    <option value="errand">errand</option>
+    <option value="work">work</option>
+    <option value="event">event</option>
+    <option value="other">other</option>
+  </select>
+  </form>
+
+  <form action="/action_page.php">
+    <label for="tasks">Choose a task:</label>
+    <select id3="task1c" name="tasks">
+      <option value="none">none</option>
+      <option value="eat">eat</option>
+      <option value="exercise">exercise</option>
+      <option value="errand">errand</option>
+      <option value="work">work</option>
+      <option value="event">event</option>
+      <option value="other">other</option>
+    </select>
+    </form>
+
+<p> Please select an afternoon task:</p>
+
+<form action="/action_page.php">
+  <label for="tasks">Choose a task:</label>
+  <select id="task2a" name="tasks">
+    <option value="none">none</option>
     <option value="eat">eat</option>
     <option value="exercise">exercise</option>
     <option value="errand">errand</option>
@@ -107,15 +101,122 @@
   </select>
 </form>
 
+<form action="/action_page.php">
+  <label for="tasks">Choose a task:</label>
+  <select id="task2b" name="tasks">
+    <option value="none">none</option>
+    <option value="eat">eat</option>
+    <option value="exercise">exercise</option>
+    <option value="errand">errand</option>
+    <option value="work">work</option>
+    <option value="event">event</option>
+    <option value="other">other</option>
+  </select>
+  </form>
+
+  <form action="/action_page.php">
+    <label for="tasks">Choose a task:</label>
+    <select id="task2c" name="tasks">
+      <option value="none">none</option>
+      <option value="eat">eat</option>
+      <option value="exercise">exercise</option>
+      <option value="errand">errand</option>
+      <option value="work">work</option>
+      <option value="event">event</option>
+      <option value="other">other</option>
+    </select>
+    </form>
+
+<p> Please select a evening task:</p>
+
+<form action="/action_page.php">
+  <label for="tasks">Choose a task:</label>
+  <select id="task3a" name="tasks">
+    <option value="none">none</option>
+    <option value="eat">eat</option>
+    <option value="exercise">exercise</option>
+    <option value="errand">errand</option>
+    <option value="work">work</option>
+    <option value="event">event</option>
+    <option value="other">other</option>
+  </select>
+  </form>
+
+  <form action="/action_page.php">
+    <label for="tasks">Choose a task:</label>
+    <select id="task3b" name="tasks">
+      <option value="none">none</option>
+      <option value="eat">eat</option>
+      <option value="exercise">exercise</option>
+      <option value="errand">errand</option>
+      <option value="work">work</option>
+      <option value="event">event</option>
+      <option value="other">other</option>
+    </select>
+    </form>
+
+    <form action="/action_page.php">
+      <label for="tasks">Choose a task:</label>
+      <select id="task3c" name="tasks">
+        <option value="none">none</option>
+        <option value="eat">eat</option>
+        <option value="exercise">exercise</option>
+        <option value="errand">errand</option>
+        <option value="work">work</option>
+        <option value="event">event</option>
+        <option value="other">other</option>
+      </select>
+      </form>
+
+<p> Please select a night task:</p>
+
+<form action="/action_page.php">
+  <label for="tasks">Choose a task:</label>
+  <select id="task4a" name="tasks">
+    <option value="none">none</option>
+    <option value="eat">eat</option>
+    <option value="exercise">exercise</option>
+    <option value="errand">errand</option>
+    <option value="work">work</option>
+    <option value="event">event</option>
+    <option value="other">other</option>
+  </select>
+</form>
+
+<form action="/action_page.php">
+  <label for="tasks">Choose a task:</label>
+  <select id="task4b" name="tasks">
+    <option value="none">none</option>
+    <option value="eat">eat</option>
+    <option value="exercise">exercise</option>
+    <option value="errand">errand</option>
+    <option value="work">work</option>
+    <option value="event">event</option>
+    <option value="other">other</option>
+  </select>
+  </form>
+
+  <form action="/action_page.php">
+    <label for="task4c">Choose a task:</label>
+    <select id="tasks1" name="tasks">
+      <option value="none">none</option>
+      <option value="eat">eat</option>
+      <option value="exercise">exercise</option>
+      <option value="errand">errand</option>
+      <option value="work">work</option>
+      <option value="event">event</option>
+      <option value="other">other</option>
+    </select>
+    </form>
 
 
-<script src="schedule.js"></script>
+
 
 <h1>Schedule privacy</h1>
 
 <form action="/action_page.php">
   <p>Would you like you schedule to be private or public?</p>
-    <input type="radio" id="private" name="privacy" value="private">
+    <input type="radio" id="private" name="privacy" value="private" required>
 <label for="private">private</label><br>
 <input type="radio" id="public" name="privacy" value="public">
 <label for="public">public</label>
