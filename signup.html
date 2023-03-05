@@ -23,7 +23,8 @@
     <h1>hello</h1>
 
     <button id="google-sign-up-btn">Sign Up with Google</button>
-    <button id="google-sign-in-btn">Sign In with Google</button>
+    <button id="google-sign-in-btn">Sign In with Google</button><br>
+    <button type="button" id="pref">Preferences</button>
     <!--     
     <script src=
     "https://www.gstatic.com/firebasejs//firebase.js">
@@ -136,6 +137,15 @@
             });
 
             localStorage.setItem("token", uid);
+            const token1 = localStorage.getItem("token");
+            if (token1 !== uid) {
+              throw errorMessage = "You have not signed in!";
+            }
+            else if (token1 == uid) {
+              window.location = "index.html"
+              
+            }
+            
 
             // var newMessageRef = messagesRef.push();
             // newMessageRef.set({
