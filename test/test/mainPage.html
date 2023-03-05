@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mainStyle.css">
+</head>
+<body>
+    <button id="myButton">View Tasks</button>
+    <h1>Morning task(s)</h1>
+    <div>
+      <input type="checkbox" id="task1aC" />
+      <label id="task1a"></label>
+    </div>
+    <div>
+      <input type="checkbox" id="task1bC" />
+      <label id="task1b"></label>
+    </div>
+    <div>
+      <input type="checkbox" id="task1cC" />
+      <label id="task1c"></label>
+    </div>
+    
+    <h1>Afternoon task(s)</h1>
+    <div>
+      <input type="checkbox" id="task2aC" />
+      <label id="task2a"></label>
+    </div>
+    <div>
+      <input type="checkbox" id="task2bC" />
+      <label id="task2b"></label>
+    </div>
+    <div>
+      <input type="checkbox" id="task2cC" />
+      <label id="task2c"></label>
+    </div>
+    
+    <h1>Evening task(s)</h1>
+    <div>
+      <input type="checkbox" id="task3aC" />
+      <label for="task3a" id="task3a"></label>
+    </div>
+    <div>
+      <input type="checkbox" id="task3bC" />
+      <label id="task3b"></label>
+    </div>
+    <div>
+      <input type="checkbox" id="task3cC" />
+      <label id="task3c"></label>
+    </div>
+    <h1>Night task(s)</h1>
+    <div>
+      <input type="checkbox" id="task4aC" />
+      <label for="task4a" id="task4a"></label>
+    </div>
+    <div>
+      <input type="checkbox" id="task4bC" />
+      <label id="task4b"></label>
+    </div>
+    <div>
+      <input type="checkbox" id="task4cC" />
+      <label id="task4c"></label>
+    </div>
+<button type="button" id="submitBtn">Submit</button>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"
+        import { getDatabase, ref, get, set, child } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js"
+        import {
+          getAuth,
+        } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCWt6EenVfkAiLFi11w1dZfcO2AHKbuRF8",
+          authDomain: "hacktj10-fb9c0.firebaseapp.com",
+          databaseURL: "https://hacktj10-fb9c0-default-rtdb.firebaseio.com",
+          projectId: "hacktj10-fb9c0",
+          storageBucket: "hacktj10-fb9c0.appspot.com",
+          messagingSenderId: "184647428227",
+          appId: "1:184647428227:web:fc4207716b84f5577113b6",
+        };
+        
+        // Initialize Firebase
+      
+        //make it so that it has to initialize before it can do anything
+      
+        const app = initializeApp(firebaseConfig);
+      document.getElementById("myButton").onclick = function(){
+        //-------------------THE REFERRENCES----------------//
+    
+        //---------------REGISTER VALUES TO DATABASE----------//
+        const getUID = localStorage.getItem("token")
+        const db = getDatabase();
+        const dbRef = ref(db,"users/" + getUID + "/dailyTasks/");
+        let z;
+
+        get(child(dbRef,'task1a')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("This is THEE z ");
+            console.log(snapshot.val());
+            document.getElementById("task1a").innerHTML = snapshot.val()
+            console.log("This is z guys")
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+        get(child(dbRef,'task1b')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("This is THEE z ");
+            console.log(snapshot.val());
+            document.getElementById("task1b").innerHTML = snapshot.val()
+            console.log("This is z guys")
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+        get(child(dbRef,'task1c')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("This is THEE z ");
+            console.log(snapshot.val());
+            document.getElementById("task1c").innerHTML = snapshot.val()
+            console.log("This is z guys")
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+
+        get(child(dbRef,'task2a')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("This is THEE z ");
+            console.log(snapshot.val());
+            document.getElementById("task2a").innerHTML = snapshot.val()
+            console.log("This is z guys")
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+        get(child(dbRef,'task2b')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("This is THEE z ");
+            console.log(snapshot.val());
+            document.getElementById("task2b").innerHTML = snapshot.val()
+            console.log("This is z guys")
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+        get(child(dbRef,'task2c')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("This is THEE z ");
+            console.log(snapshot.val());
+            document.getElementById("task2c").innerHTML = snapshot.val()
+            console.log("This is z guys")
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+
+        get(child(dbRef,'task3a')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("This is THEE z ");
+            console.log(snapshot.val());
+            document.getElementById("task3a").innerHTML = snapshot.val()
+            console.log("This is z guys")
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+
+        get(child(dbRef,'task3b')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("This is THEE z ");
+            console.log(snapshot.val());
+            document.getElementById("task3b").innerHTML = snapshot.val()
+            console.log("This is z guys")
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });        get(child(dbRef,'task3c')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("This is THEE z ");
+            console.log(snapshot.val());
+            document.getElementById("task3c").innerHTML = snapshot.val()
+            console.log("This is z guys")
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+  
+
+       for(let i = 1; i <= 4; i++) {
+        if (i == 1) {
+            z = "a"
+        } else if(i == 2) {
+            z = "b"
+        } else if(i ==3) {
+            z = "c"
+        }
+        get(child(dbRef,'task3' + z)).then((snapshot) => {
+            if (snapshot.exists()) {
+            console.log(snapshot.val());
+            document.getElementById("task3" + z).innerHTML = snapshot.val()
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+    
+        get(child(dbRef,'task4a')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("This is THEE z ");
+            console.log(snapshot.val());
+            document.getElementById("task4a").innerHTML = snapshot.val()
+            console.log("This is z guys")
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+        get(child(dbRef,'task4b')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("This is THEE z ");
+            console.log(snapshot.val());
+            document.getElementById("task4b").innerHTML = snapshot.val()
+            console.log("This is z guys")
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+        get(child(dbRef,'task4c')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("This is THEE z ");
+            console.log(snapshot.val());
+            document.getElementById("task4c").innerHTML = snapshot.val()
+            console.log("This is z guys")
+            } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+      }
+              
+const submitBtn = document.getElementById("submitBtn")
+submitBtn.addEventListener("click", () => {
+    const checkedInputs = document.querySelectorAll('input[type="checkbox"]:checked');
+    let num;
+    num = checkedInputs.length;
+    let message = "You checked:" + num;
+    const taskComplete = ref(db,"users/" + getUID + "/dailyTasks/")
+    set(taskComplete, {
+        taskComplete: num,
+        points: num * 100,
+    })
+    alert(message);
+    if (num => 0) {
+        console.log("HEURWEHFDNGKJSDKGJSDKLGJ")
+        window.location = "pointDisplay.html"
+    }
+});
+    }
+
+
+      </script>
+      </body>
+      </html>

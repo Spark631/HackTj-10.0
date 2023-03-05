@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="points.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <h1>Congratulations!</h1>
+    <h2>You have earned: </h2>
+    <h1 id="point">Points</h1>
+    <h2>points</h2>
+
+    <h3>You are currently</h1>
+    <h3 id="place">Not in first place</h3>
+
+
+</head>
+<body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"
+        import { getDatabase, ref, get, set, child } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js"
+        import {
+          getAuth,
+        } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCWt6EenVfkAiLFi11w1dZfcO2AHKbuRF8",
+          authDomain: "hacktj10-fb9c0.firebaseapp.com",
+          databaseURL: "https://hacktj10-fb9c0-default-rtdb.firebaseio.com",
+          projectId: "hacktj10-fb9c0",
+          storageBucket: "hacktj10-fb9c0.appspot.com",
+          messagingSenderId: "184647428227",
+          appId: "1:184647428227:web:fc4207716b84f5577113b6",
+        };
+        
+        // Initialize Firebase
+      
+        //make it so that it has to initialize before it can do anything
+        setTimeout(() => {  console.log("delay!"); }, 3000);
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
+
+        const getUID = localStorage.getItem("token")
+
+        const dbRef = ref(db,"users/" + getUID + "/dailyTasks/");
+        let val;
+        get(child(dbRef,'points')).then((snapshot) => {
+            if (snapshot.exists()) {
+            console.log(snapshot.val());
+            document.getElementById("point").innerHTML = snapshot.val()
+            val = snapshot.val()
+        } else {
+            console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+      
+        const dbRefTwo = ref(db,"Top")
+        
+        get(child(dbRefTwo,'Score')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("THIS IS THE SCORE" + snapshot.val())
+                console.log("this is val" + val)
+                if (val < snapshot.val()) {
+                    document.getElementById("place").innerHTML = "You are not First"
+                }
+
+            } else {
+                consol.elog("Error")
+            }
+        }).catch((eorror) => {
+            console.error(error);
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+/* Set the background color to a soothing pastel shade */
+body {
+    background-color: #F5E5D7;
+  }
+  
+  /* Add a handwritten font for a personal touch */
+  h1, label {
+    font-family: 'Indie Flower', cursive;
+  }
+  
+  /* Add a border and padding to the task checkboxes for visual clarity */
+  input[type=checkbox] {
+    border: 2px solid #E4B4A4;
+    padding: 10px;
+  }
+  
+  /* Style the task headings with a decorative underline */
+  h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #E4B4A4;
+    padding-bottom: 10px;
+  }
+  
+  /* Style the submit button with a gradient background and rounded corners */
+  #submitBtn {
+    background: linear-gradient(to bottom, #E4B4A4 0%, #D08D81 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  
+  /* Add a hover effect to the submit button */
+  #submitBtn:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom, #D08D81 0%, #E4B4A4 100%);
+  }
+  
+  /* Style the click me button with a border, rounded corners, and a drop shadow */
+  #myButton {
+    border: 2px solid #E4B4A4;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 24px;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 5px 5px 10px #D08D81;
+  }
+  
+  /* Add a hover effect to the click me button */
+  #myButton:hover {
+    cursor: pointer;
+    background-color: #E4B4A4;
+    color: white;
+  }
+  
+  /* Add some spacing and margin to the task labels */
+  div {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    margin-left: 10px;
+  }
+  
+  /* Add a gradient border to the task labels */
+  label {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-radius: 20px;
+    border-image-source: linear-gradient(to right, #E4B4A4, #D08D81);
+  }
+  
